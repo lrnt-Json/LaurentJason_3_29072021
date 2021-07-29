@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+}
+
+body h1 {
+  margin: 0;
+  font-family: 'Shrikhand', sans-serif;
+  font-weight: normal;
+}
+
+body p {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 25px 0 0 75px;
+}
+
+form {
+  padding: 20px 0 20px 50px;
+  outline: none;
+  background: #f3f3f3;
+}
+
+form input {
+  margin-left: 50px;
+  font-size: 20px;
+  border: none;
+  background: #f3f3f3;
+}
+/*# sourceMappingURL=style.css.map */
