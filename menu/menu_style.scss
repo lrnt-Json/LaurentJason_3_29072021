@@ -1,0 +1,147 @@
+
+    /*color*/
+
+$dark_background_color : #353535;
+$background_color : #EAEAEA ;
+$light_background_color : #F6F6F6 ;
+$primary_color : #9356DC ;
+$secondary_color : #FF79DA ;
+$tertiary_color : #99E2D0;
+
+    /*Font*/
+
+$Shrikhand : 'Shrikhand', sans-serif;
+$Roboto : 'Roboto', sans-serif;
+
+
+body{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+
+    h1{
+        font-size: 40px;
+        margin:0;
+        font-family: $Shrikhand;
+        font-weight: normal;
+    }
+
+    h2{
+        margin: 10px 0 10px 10px;
+        font-size: 20px;
+        font-weight: normal;
+        font-family: $Roboto;
+    }
+
+    h3{
+        font-size: 20px;
+        margin: 0;
+        font-family: $Roboto;
+        font-weight: bolder;
+    }
+
+    h4{
+        font-size: 18px;
+        margin: 0;
+        font-family: $Roboto;
+        font-weight: normal;
+    }
+
+    p{
+        margin: 0;
+        font-family: $Roboto;
+    }
+
+    input{
+        font-family: $Roboto;
+        font-weight: 600;
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    ul{
+        list-style-type: none;
+    }
+
+    .txt-line{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+header{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.img{
+    margin-bottom: -60px;
+
+    img{
+        width: 425px;
+    }
+}
+
+.menu{
+    width: 100%;
+    background-color: $light_background_color;
+    border-radius: 20px 20px 0 0;
+
+    &_title{
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+    }
+
+    li{
+        background-color: white;
+        width: 330px;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        p{
+            font-weight: bolder;
+        }
+
+    }
+
+    .order{
+        background: linear-gradient(180deg, $secondary_color 10%, $primary_color 100%);
+        border: none;
+        border-radius: 30px;
+        color: white;
+        padding: 20px 50px;
+        font-size: 18px;
+        font-weight: lighter;
+    }
+}
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $dark_background_color;
+    width: 100%;
+    padding: 25px 0;
+    h1{
+        margin-left: 20px;
+        font-size: 20px;
+        color: white;
+    }
+
+    a{
+        color: white;
+        font-family: $Roboto;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+}

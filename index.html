@@ -22,6 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/f2f86637b7.js" crossorigin="anonymous"></script>
+
     <title>OhMyFood</title>
 
 </head>
@@ -35,13 +37,110 @@
 </header>
 
 <form>
-    <p><label for="search"></label><input type="search" id=search placeholder="Paris, Belleville"></p>
+    <p><label for="search"><i class="fas fa-map-marker-alt"></i></label><input type="search" id=search placeholder="Paris, Belleville"></p>
 </form>
 
-<article class="">
-
+<article class="explore">
+    <h2>Réservez le menu qui vous convient</h2>
+    <h3>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h3>
+    <input type ="button" class="explore_button" value="Explorer nos restaurants">
 </article>
 
+<article class="tuto">
+    <h2>fonctionnement</h2>
+    <ol>
+        <li><p class="number">1</p><i class="fas fa-mobile-alt"></i> Choisissez un restaurant</li>
+        <li><p class="number">2</p><i class="fas fa-list"></i> Composez votre menu</li>
+        <li><p class="number">3</p><i class="fas fa-store"></i> Dégustez au restaurant</li>
+    </ol>
+</article>
+
+<nav class="restaurants">
+    <h2>Restaurants</h2>
+    <ul>
+        <li><a href="menu/menu_a.html">
+
+            <div class="menu menu_a">
+                <p>nouveau</p>
+            </div>
+
+            <div class="title">
+
+                <div>
+                    <h3>La palette du goût</h3>
+                    <h4>Ménilmontant</h4>
+                </div>
+
+                <i class="far fa-heart"></i><i class="fas fa-heart like"></i>
+
+            </div>
+
+        </a></li>
+
+        <li>
+            <a>
+            <div class="menu menu_b">
+                <p>nouveau</p>
+            </div>
+
+            <div class="title">
+
+                <div>
+                    <h3>La note enchantée</h3>
+                    <h4>Charonne</h4>
+                </div>
+
+                <i class="far fa-heart"></i>
+
+            </div>
+            </a>
+        </li>
+
+        <li><a>
+
+            <div class="menu menu_c">
+            </div>
+
+            <div class="title">
+
+                <div>
+                    <h3>À la française</h3>
+                    <h4>Cité rouge</h4>
+                </div>
+
+                <i class="far fa-heart"></i>
+
+            </div>
+
+        </a></li>
+
+        <li><a>
+
+            <div class="menu menu_d">
+            </div>
+
+            <div class="title">
+
+                <div>
+                    <h3>Le délice des sens</h3>
+                    <h4>Ménilmontant</h4>
+                </div>
+
+                <i class="far fa-heart"></i>
+
+            </div>
+
+        </a></li>
+    </ul>
+</nav>
+
+<footer>
+    <h1>ohmyfood</h1>
+    <a><i class="fas fa-utensils"></i> Proposer un restaurant</a>
+    <a><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
+    <a>Mentions légales</a>
+    <a>Contact</a>
+</footer>
 </body>
 
 </html>

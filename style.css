@@ -1,33 +1,315 @@
+/*color*/
+/*Font*/
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0;
 }
 
 body h1 {
-  margin: 0;
-  font-family: 'Shrikhand', sans-serif;
+  font-size: 40px;
+  margin: 10px 0;
+  font-family: "Shrikhand", sans-serif;
   font-weight: normal;
+}
+
+body h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: bolder;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+}
+
+body h3 {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+}
+
+body h4 {
+  font-size: 18px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
 }
 
 body p {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-header h1 {
-  font-size: 40px;
-  margin: 25px 0 0 75px;
+body input {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+body a {
+  color: black;
+  text-decoration: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000;
+          box-shadow: 0px 10px 13px -7px #000000;
 }
 
 form {
-  padding: 20px 0 20px 50px;
-  outline: none;
-  background: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0;
+  background: #EAEAEA;
+  width: 100%;
+}
+
+form label {
+  font-size: 20px;
 }
 
 form input {
-  margin-left: 50px;
+  outline: none;
+  margin-left: 20px;
   font-size: 20px;
   border: none;
-  background: #f3f3f3;
+  background: #EAEAEA;
+  width: 160px;
+}
+
+.explore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0;
+  width: 100%;
+  background-color: #F6F6F6;
+}
+
+.explore_button {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF79DA), to(#9356DC));
+  background: linear-gradient(180deg, #FF79DA 10%, #9356DC 100%);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.tuto {
+  width: 100%;
+}
+
+.tuto h2 {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+
+.tuto ol {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+.tuto ol li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #F6F6F6;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  width: 350px;
+  font-size: 25px;
+  padding: 30px 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.tuto ol li i {
+  margin: 0 15px;
+  color: gray;
+}
+
+.tuto ol li p {
+  background-color: #9356DC;
+  color: white;
+  padding: 1px 8px;
+  border-radius: 100%;
+  position: relative;
+  right: 35px;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  width: 100%;
+}
+
+.restaurants h2 {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+
+.restaurants ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+.restaurants li {
+  list-style-type: none;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.restaurants li .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 15px;
+}
+
+.restaurants li .title h3 {
+  margin-top: 12px;
+  margin-bottom: 0px;
+  font-weight: bolder;
+}
+
+.restaurants li .title i {
+  font-size: 30px;
+  margin: 15px;
+}
+
+.restaurants li .title .like {
+  color: linear-gradient(180deg, #FF79DA 10%, #9356DC 100%);
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+}
+
+.restaurants li .title .like:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  color: #00ac81;
+}
+
+.restaurants li a .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.restaurants li a .menu p {
+  background-color: #99E2D0;
+  color: #00ac81;
+  font-weight: 600;
+  padding: 10px;
+  margin: 10px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.restaurants li a .menu_a {
+  background-image: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position-y: -35px;
+  height: 180px;
+}
+
+.restaurants li a .menu_b {
+  background-image: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position-y: -158px;
+  height: 180px;
+}
+
+.restaurants li a .menu_c {
+  background-image: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position-y: -50px;
+  height: 180px;
+}
+
+.restaurants li a .menu_d {
+  background-image: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position-y: -60px;
+  height: 180px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #353535;
+  width: 100%;
+  padding: 25px 0;
+}
+
+footer h1 {
+  margin-left: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+footer a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */
