@@ -15,14 +15,15 @@ body {
 }
 
 body h1 {
-  font-size: 40px;
+  font-size: 35px;
   margin: 0;
   font-family: "Shrikhand", sans-serif;
   font-weight: normal;
 }
 
 body h2 {
-  margin: 10px 0 10px 10px;
+  margin: 0;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: normal;
   font-family: "Roboto", sans-serif;
@@ -59,6 +60,7 @@ body a {
 
 body ul {
   list-style-type: none;
+  padding: 0;
 }
 
 body .txt-line {
@@ -73,14 +75,31 @@ body .txt-line {
           align-items: center;
 }
 
+body section {
+  margin-bottom: 20px;
+}
+
 header {
+  background-image: url(/images/logo/ohmyfood@2x.svg);
+  background-repeat: no-repeat;
+  background-size: 196px;
+  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
+  height: 65px;
+}
+
+header i {
+  font-size: 25px;
+  margin: 0 20px;
 }
 
 .img {
@@ -94,7 +113,18 @@ header {
 .menu {
   width: 100%;
   background-color: #F6F6F6;
-  border-radius: 20px 20px 0 0;
+  border-radius: 40px 40px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 60px;
 }
 
 .menu_title {
@@ -106,18 +136,54 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.menu_title i {
+  font-size: 30px;
 }
 
 .menu li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: white;
-  width: 330px;
+  width: 375px;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
+.menu li .dishes {
+  width: 100%;
+}
+
 .menu li p {
   font-weight: bolder;
+}
+
+.menu li .validate {
+  width: 10px;
+  opacity: 0;
+  height: auto;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+}
+
+.menu li .validate:hover {
+  -webkit-transform-origin: 0px;
+          transform-origin: 0px;
+  opacity: 1;
+  width: 50px;
+  background-color: #99E2D0;
 }
 
 .menu .order {
@@ -145,6 +211,7 @@ footer {
 }
 
 footer h1 {
+  margin: 10px 0;
   margin-left: 20px;
   font-size: 20px;
   color: white;
