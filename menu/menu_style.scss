@@ -13,6 +13,8 @@ $tertiary_color : #99E2D0;
 $Shrikhand : 'Shrikhand', sans-serif;
 $Roboto : 'Roboto', sans-serif;
 
+
+
 body{
     display:flex;
     align-items: center;
@@ -39,6 +41,9 @@ body{
         margin: 0;
         font-family: $Roboto;
         font-weight: bolder;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
     }
 
     h4{
@@ -46,6 +51,9 @@ body{
         margin: 0;
         font-family: $Roboto;
         font-weight: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
     }
 
     p{
@@ -78,7 +86,6 @@ body{
         margin-bottom: 20px;
     }
 }
-
 
 header{
 
@@ -135,12 +142,12 @@ header{
         justify-content: space-between;
         background-color: white;
         width: 375px;
-        padding: 10px;
         border-radius: 10px;
         margin-bottom: 20px;
 
         .dishes{
             width: 100%;
+            padding: 10px;
         }
 
         p{
@@ -148,19 +155,19 @@ header{
         }
 
         .validate{
-
             width: 10px;
+            padding: 10px;
+            border-radius: 0px 10px 10px 0px;
             opacity: 0;
             height: auto;
             transition: all 150ms;
 
             &:hover{
-            transform-origin: 0px;
-            opacity: 1;
-            width: 50px;
-            background-color: $tertiary_color;
-
-            }
+                transform-origin: 0px;
+                opacity: 1;
+                width: 50px;
+                background-color: $tertiary_color;
+                }
         }
     }
 
@@ -195,4 +202,18 @@ footer{
         margin-left: 20px;
         margin-bottom: 10px;
     }
+}
+
+@each $var in list {
+
+}
+
+@keyframes progress-dish{
+    0%{
+        transform:opacity(0);
+}
+    100%{
+        transform: opacity(1);
+}
+
 }

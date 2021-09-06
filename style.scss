@@ -146,9 +146,16 @@ form{
             margin-bottom: 20px;
             border-radius: 20px;
             width: 350px;
-            font-size: 25px;
+            font-size: 24px;
             padding: 30px 20px;
             font-family: $Roboto;
+
+            div{
+                display: flex;
+                align-items: center;
+                position: relative;
+                right: 35px;
+            }
 
             i{
             margin: 0 15px;
@@ -156,12 +163,15 @@ form{
             }
 
             p{
+            display: flex;
+            justify-content: center;
             background-color: $primary_color;
             color: white;
-            padding: 1px 8px ;
+            width: 30px;
+            height: 30px;
+            padding: 4px;
             border-radius: 100%;
-            position: relative;
-            right: 35px;}
+        }
         }
 
         .last_help{
@@ -215,21 +225,34 @@ form{
                 font-weight: bolder;
             }
 
+            .heart_block{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                right: 30px;
+                top: 5px;
+            }
+
             i{
+                position: absolute;
                 font-size: 30px;
-                margin: 15px;
+                margin: 0;
             }
 
             .like{
                 color: linear-gradient(180deg, $secondary_color 10%, $primary_color 100%);
                 opacity: 0;
-                font-size: 15px;
+                font-size: 30px;
+                transform-origin: scale(0.1);
                 transition: all 150ms;
-                &:hover
-                {
-                    transform: scale(2);
-                    color:#00ac81;
+
+                &:hover{
+                    background: linear-gradient(180deg, $secondary_color 10%, $primary_color 100%);
+                    transform: scale(1);
+                    background-clip :text;
+                    -webkit-background-clip: text;
                     opacity: 1;
+                    -webkit-text-fill-color: transparent;
 }
 
             }

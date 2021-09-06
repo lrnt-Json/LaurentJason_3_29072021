@@ -154,9 +154,20 @@ form input {
   margin-bottom: 20px;
   border-radius: 20px;
   width: 350px;
-  font-size: 25px;
+  font-size: 24px;
   padding: 30px 20px;
   font-family: "Roboto", sans-serif;
+}
+
+.tuto ol li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  right: 35px;
 }
 
 .tuto ol li i {
@@ -165,12 +176,18 @@ form input {
 }
 
 .tuto ol li p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #9356DC;
   color: white;
-  padding: 1px 8px;
+  width: 30px;
+  height: 30px;
+  padding: 4px;
   border-radius: 100%;
-  position: relative;
-  right: 35px;
 }
 
 .tuto ol .last_help {
@@ -231,24 +248,39 @@ form input {
   font-weight: bolder;
 }
 
+.restaurants li .title .heart_block {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 30px;
+  top: 5px;
+}
+
 .restaurants li .title i {
+  position: absolute;
   font-size: 30px;
-  margin: 15px;
+  margin: 0;
 }
 
 .restaurants li .title .like {
   color: linear-gradient(180deg, #FF79DA 10%, #9356DC 100%);
   opacity: 0;
-  font-size: 15px;
+  font-size: 30px;
+  -webkit-transform-origin: scale(0.1);
+          transform-origin: scale(0.1);
   -webkit-transition: all 150ms;
   transition: all 150ms;
 }
 
 .restaurants li .title .like:hover {
-  -webkit-transform: scale(2);
-          transform: scale(2);
-  color: #00ac81;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF79DA), to(#9356DC));
+  background: linear-gradient(180deg, #FF79DA 10%, #9356DC 100%);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background-clip: text;
+  -webkit-background-clip: text;
   opacity: 1;
+  -webkit-text-fill-color: transparent;
 }
 
 .restaurants li a .menu {
