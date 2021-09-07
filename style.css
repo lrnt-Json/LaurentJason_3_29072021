@@ -262,25 +262,30 @@ form input {
   margin: 0;
 }
 
-.restaurants li .title .like {
-  color: linear-gradient(180deg, #FF79DA 10%, #9356DC 100%);
+.restaurants li .title .like_b {
+  color: linear-gradient(180deg, #FF79DA 10%, #9356DC 80%);
   opacity: 0;
   font-size: 30px;
   -webkit-transform-origin: scale(0.1);
           transform-origin: scale(0.1);
   -webkit-transition: all 150ms;
   transition: all 150ms;
+  z-index: 10;
 }
 
-.restaurants li .title .like:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF79DA), to(#9356DC));
-  background: linear-gradient(180deg, #FF79DA 10%, #9356DC 100%);
+.restaurants li .title .like_b:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF79DA), color-stop(80%, #9356DC));
+  background: linear-gradient(180deg, #FF79DA 10%, #9356DC 80%);
   -webkit-transform: scale(1);
           transform: scale(1);
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 1;
   -webkit-text-fill-color: transparent;
+}
+
+.restaurants li .title .like_b:hover + .like_a {
+  opacity: 0;
 }
 
 .restaurants li a .menu {

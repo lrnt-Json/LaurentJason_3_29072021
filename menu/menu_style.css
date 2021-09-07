@@ -1,5 +1,94 @@
 /*color*/
 /*Font*/
+.loader {
+  height: 0;
+}
+
+.loader_circle {
+  width: 120px;
+  height: 0;
+  border: #d8c9e9 8px solid;
+  border-radius: 6em;
+  animation: progression_loader 5000ms 150ms both;
+  -webkit-animation: progression_loader 5000ms 150ms both;
+}
+
+.loader_point {
+  width: 20px;
+  height: 20px;
+  border: #9356DC 2px solid;
+  background: #9356DC;
+  border-radius: 2em;
+}
+
+@-webkit-keyframes progression_loader {
+  from {
+    height: 120px;
+  }
+  99% {
+    -webkit-transform: rotate(-3turn) scale(1);
+            transform: rotate(-3turn) scale(1);
+    height: 120px;
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+@keyframes progression_loader {
+  from {
+    height: 120px;
+  }
+  99% {
+    -webkit-transform: rotate(-3turn) scale(1);
+            transform: rotate(-3turn) scale(1);
+    height: 120px;
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes apparition {
+  from {
+    height: 0;
+    visibility: hidden;
+  }
+  99% {
+    height: 0;
+  }
+  to {
+    height: auto;
+    visibility: visible;
+  }
+}
+
+@keyframes apparition {
+  from {
+    height: 0;
+    visibility: hidden;
+  }
+  99% {
+    height: 0;
+  }
+  to {
+    height: auto;
+    visibility: visible;
+  }
+}
+
+.main {
+  height: 0;
+  animation: apparition 0ms 5000ms both;
+  -webkit-animation: apparition 0ms 5000ms both;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,13 +256,27 @@ header i {
   margin-bottom: 20px;
 }
 
+.menu li p {
+  font-weight: bolder;
+}
+
 .menu li .dishes {
   width: 100%;
   padding: 10px;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
 }
 
-.menu li p {
-  font-weight: bolder;
+.menu li.plate:hover .dishes {
+  width: 75%;
+}
+
+.menu li.plate:hover .validate {
+  -webkit-transform-origin: 0px;
+          transform-origin: 0px;
+  opacity: 1;
+  width: 50px;
+  background-color: #99E2D0;
 }
 
 .menu li .validate {
@@ -182,16 +285,6 @@ header i {
   border-radius: 0px 10px 10px 0px;
   opacity: 0;
   height: auto;
-  -webkit-transition: all 150ms;
-  transition: all 150ms;
-}
-
-.menu li .validate:hover {
-  -webkit-transform-origin: 0px;
-          transform-origin: 0px;
-  opacity: 1;
-  width: 50px;
-  background-color: #99E2D0;
 }
 
 .menu .order {
@@ -230,6 +323,33 @@ footer a {
   font-family: "Roboto", sans-serif;
   margin-left: 20px;
   margin-bottom: 10px;
+}
+
+@-webkit-keyframes loading-screen {
+  0% {
+    -webkit-transform: opacity(0);
+            transform: opacity(0);
+  }
+  100% {
+    -webkit-transform: opacity(1);
+            transform: opacity(1);
+  }
+}
+
+@keyframes loading-screen {
+  0% {
+    -webkit-transform: opacity(0);
+            transform: opacity(0);
+  }
+  100% {
+    -webkit-transform: opacity(1);
+            transform: opacity(1);
+  }
+}
+
+.element-list {
+  animation: -apparition 2000 list;
+  -webkit-animation: -apparition 2000 list;
 }
 
 @-webkit-keyframes progress-dish {

@@ -13,7 +13,67 @@ $tertiary_color : #99E2D0;
 $Shrikhand : 'Shrikhand', sans-serif;
 $Roboto : 'Roboto', sans-serif;
 
+.loader{
+    height: 0;
+    margin-top: 100px;
 
+    &_circle{
+            width: 120px;
+            height: 0;
+            border: #d8c9e9 8px solid;
+            border-radius: 6em;
+            animation: progression_loader 5000ms 150ms both;
+            -webkit-animation: progression_loader 5000ms 150ms both;
+}
+
+    &_point{
+        width: 20px;
+        height: 20px;
+        border: $primary_color 2px solid;
+        background: $primary_color;
+        border-radius: 2em;
+}
+}
+
+
+@keyframes progression_loader{
+    from {
+        height: 120px;
+}
+
+    99%{
+        transform: rotate(-3turn) scale(1);
+        height: 120px ;
+}
+
+    to{
+        transform:scale(0);
+        visibility: hidden;
+        height: 0;
+}
+
+}
+
+@keyframes emerge_main{
+    from {
+        height: 0;
+        visibility: hidden;
+}
+
+    99%{height: 0;}
+
+    to{
+        height: auto;
+        visibility: visible;
+}
+
+}
+
+.main{
+    height: 0;
+    animation: apparition 0ms 5000ms both;
+    -webkit-animation: apparition 0ms 5000ms both;
+}
 
 body{
     display:flex;
@@ -145,14 +205,30 @@ header{
         border-radius: 10px;
         margin-bottom: 20px;
 
-        .dishes{
-            width: 100%;
-            padding: 10px;
-        }
-
         p{
             font-weight: bolder;
         }
+
+        .dishes{
+            width: 100%;
+            padding: 10px;
+            transition: all 150ms;
+            }
+
+        &.plate:hover{
+
+            .dishes{
+                    width: 75%;
+                }
+
+            .validate {
+                transform-origin: 0px;
+                opacity: 1;
+                width: 50px;
+                background-color: $tertiary_color;
+                }
+            }
+
 
         .validate{
             width: 10px;
@@ -160,14 +236,6 @@ header{
             border-radius: 0px 10px 10px 0px;
             opacity: 0;
             height: auto;
-            transition: all 150ms;
-
-            &:hover{
-                transform-origin: 0px;
-                opacity: 1;
-                width: 50px;
-                background-color: $tertiary_color;
-                }
         }
     }
 
@@ -204,16 +272,31 @@ footer{
     }
 }
 
-@each $var in list {
+@keyframes loading-screen{
 
+    0%{
+        transform:opacity(0);
+    }
+    100%{
+        transform: opacity(1);
+    }
 }
 
-@keyframes progress-dish{
+
+
+@each $value in delay {
+    animation: fadein_plate 2000 $value;
+    -webkit-animation: fadein_plate 2000 $value;
+}
+
+$delay: (20ms 40ms);
+
+@keyframes fadein{
     0%{
         transform:opacity(0);
 }
     100%{
-        transform: opacity(1);
+        transform:opacity(1);
 }
 
 }
