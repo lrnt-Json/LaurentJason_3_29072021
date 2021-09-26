@@ -99,7 +99,7 @@ body{
 header{
 
     background-image: url(/images/logo/ohmyfood@2x.svg) ;
-    background-color: white;
+    background-color: $light_background_color;
     background-repeat: no-repeat;
     background-size: 196px;
     background-position: center;
@@ -117,10 +117,11 @@ header{
 }
 
 .img{
-
+    overflow: clip;
     height: 250px;
     width: 425px;
-    overflow-x: clip;
+    border-radius: 2em;
+    margin: 30px 0;
 
     &_a{
         position: relative;
@@ -325,12 +326,28 @@ $delay: 100ms, 200ms, 300ms, 400ms, 500ms, 600ms, 700ms, 800ms, 900ms, 1000ms, 1
 
 @media (max-width: 425px){
 
+    header{
+        background-color: white;
+    }
+
+    .img{
+        overflow: initial;
+        overflow-x: clip;
+        border-radius: 0;
+        margin: 0;
+}
+
     .menu {
         border-radius: 40px 40px 0 0;
     }
 }
 
 @media (max-width: 375px){
+
+    body{
+        h1{
+            font-size: 25px;
+        }}
 
     .img{
         width: 375px;
@@ -343,13 +360,28 @@ $delay: 100ms, 200ms, 300ms, 400ms, 500ms, 600ms, 700ms, 800ms, 900ms, 1000ms, 1
     }
 
     .menu{
+
+        &_title{
+
+            .like_a{
+                font-size: 25px;
+            }
+
+            .like_b{
+                font-size: 25px;
+            }
+        }
+
         li{
             width: 325px;
         }
     }
+
 }
 
+
 @media (max-width: 320px){
+
 
     .img{
         width: 320px;
@@ -357,8 +389,10 @@ $delay: 100ms, 200ms, 300ms, 400ms, 500ms, 600ms, 700ms, 800ms, 900ms, 1000ms, 1
     }
 
     .menu{
+
         li{
             width: 270px;
         }
-    }
+}
+
 }
