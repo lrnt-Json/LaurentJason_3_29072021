@@ -125,6 +125,7 @@ header i {
 .img {
   height: 250px;
   width: 425px;
+  overflow-x: clip;
 }
 
 .img_a {
@@ -436,9 +437,33 @@ footer a {
   }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 425px) {
   .menu {
     border-radius: 40px 40px 0 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .img {
+    width: 375px;
+    height: 225px;
+  }
+  .img_a {
+    width: 420px;
+    right: 25px;
+  }
+  .menu li {
+    width: 325px;
+  }
+}
+
+@media (max-width: 320px) {
+  .img {
+    width: 320px;
+    height: 225px;
+  }
+  .menu li {
+    width: 270px;
   }
 }
 /*# sourceMappingURL=menu_style.css.map */

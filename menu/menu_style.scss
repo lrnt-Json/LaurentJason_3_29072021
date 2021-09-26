@@ -120,6 +120,7 @@ header{
 
     height: 250px;
     width: 425px;
+    overflow-x: clip;
 
     &_a{
         position: relative;
@@ -322,10 +323,42 @@ $delay: 100ms, 200ms, 300ms, 400ms, 500ms, 600ms, 700ms, 800ms, 900ms, 1000ms, 1
 
 }
 
-@media (max-width: 426px){
+@media (max-width: 425px){
 
     .menu {
         border-radius: 40px 40px 0 0;
     }
 }
 
+@media (max-width: 375px){
+
+    .img{
+        width: 375px;
+        height: 225px;
+
+        &_a{
+            width:420px;
+            right:25px;
+        }
+    }
+
+    .menu{
+        li{
+            width: 325px;
+        }
+    }
+}
+
+@media (max-width: 320px){
+
+    .img{
+        width: 320px;
+        height: 225px;
+    }
+
+    .menu{
+        li{
+            width: 270px;
+        }
+    }
+}
