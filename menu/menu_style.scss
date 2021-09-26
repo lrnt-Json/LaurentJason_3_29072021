@@ -13,69 +13,16 @@ $tertiary_color : #99E2D0;
 $Shrikhand : 'Shrikhand', sans-serif;
 $Roboto : 'Roboto', sans-serif;
 
-.loader{
-    height: 0;
-    margin-top: 100px;
-
-    &_circle{
-            width: 120px;
-            height: 0;
-            border: #d8c9e9 8px solid;
-            border-radius: 6em;
-            animation: progression_loader 5000ms 150ms both;
-            -webkit-animation: progression_loader 5000ms 150ms both;
-}
-
-    &_point{
-        width: 20px;
-        height: 20px;
-        border: $primary_color 2px solid;
-        background: $primary_color;
-        border-radius: 2em;
-}
-}
-
-
-@keyframes progression_loader{
-    from {
-        height: 120px;
-}
-
-    99%{
-        transform: rotate(-3turn) scale(1);
-        height: 120px ;
-}
-
-    to{
-        transform:scale(0);
-        visibility: hidden;
-        height: 0;
-}
-
-}
-
-@keyframes emerge_main{
-    from {
-        height: 0;
-        visibility: hidden;
-}
-
-    99%{height: 0;}
-
-    to{
-        height: auto;
-        visibility: visible;
-}
-
-}
-
 .main{
-    height: 0;
-    animation: apparition 0ms 5000ms both;
-    -webkit-animation: apparition 0ms 5000ms both;
+    overflow: auto;
+    animation: emerge_main 0ms 5000ms both;
+    width: 100%;
 }
 
 body{
+
+    height: 100%;
+    justify-content: center;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -89,8 +36,10 @@ body{
     }
 
     h2{
+        width: 50px;
         margin:0;
         margin-bottom: 10px;
+        border-bottom: $tertiary_color solid 4px;
         font-size: 20px;
         font-weight: normal;
         font-family: $Roboto;
@@ -107,7 +56,7 @@ body{
     }
 
     h4{
-        font-size: 18px;
+        font-size: 17px;
         margin: 0;
         font-family: $Roboto;
         font-weight: normal;
@@ -149,8 +98,8 @@ body{
 
 header{
 
-
     background-image: url(/images/logo/ohmyfood@2x.svg) ;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: 196px;
     background-position: center;
@@ -168,17 +117,41 @@ header{
 }
 
 .img{
-    margin-bottom: -60px;
 
-    img{
+    height: 250px;
+    width: 425px;
+
+    &_a{
+        position: relative;
+        width: 465px;
+        z-index: -1;
+        right: 20px;
+    }
+
+    &_b{
+        position: relative;
         width: 425px;
+        z-index: -1;
+        bottom: 110px;
+    }
+
+    &_c{
+        position: relative;
+        width: 470px;
+        z-index: -1;
+        right: 2px;
+    }
+
+    &_d{
+        position: relative;
+        width: 455px;
+        z-index: -1;
     }
 }
 
 .menu{
     width: 100%;
     background-color: $light_background_color;
-    border-radius: 40px 40px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,10 +162,43 @@ header{
         display: flex;
         align-items: center;
         width: 100%;
-        padding: 30px 0;
+        padding: 25px 0;
+
+        .heart_block{
+            width: 30px;
+            height: 30px;
+            position: relative;
+            right: 10px;
+        }
 
         i{
+            position: absolute;
             font-size: 30px;
+            margin: 0;
+        }
+
+        .like_b{
+            color: transparent;
+            opacity: 0;
+            font-size: 30px;
+            transform-origin: scale(0.1);
+            transition: all 2500ms;
+            z-index: 10;
+            &:hover{
+
+                background: linear-gradient(180deg, $secondary_color 10%, $primary_color 80%);
+                transform: scale(1);
+                background-clip :text;
+                -webkit-background-clip: text;
+                opacity: 1;
+                -webkit-text-fill-color: transparent;
+
+            }
+
+            &:hover + .like_a{
+                opacity: 0;
+            }
+
         }
     }
 
@@ -206,37 +212,46 @@ header{
         margin-bottom: 20px;
 
         p{
+            margin-left: 10px;
             font-weight: bolder;
         }
 
         .dishes{
-            width: 100%;
+            width: 92%;
             padding: 10px;
             transition: all 150ms;
             }
 
-        &.plate:hover{
+        .validate{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10px;
+            padding: 0px;
+            border-radius: 0px 10px 10px 0px;
+            opacity: 0;
+            height: auto;
+        }
+
+        &.dish:hover{
 
             .dishes{
-                    width: 75%;
+                    width: 80%;
                 }
 
             .validate {
                 transform-origin: 0px;
                 opacity: 1;
-                width: 50px;
+                width: 35px;
                 background-color: $tertiary_color;
+                color: white;
+                font-size: 25px;
+                padding: 10px;
                 }
+
+            .check {rotate: 360;}
             }
 
-
-        .validate{
-            width: 10px;
-            padding: 10px;
-            border-radius: 0px 10px 10px 0px;
-            opacity: 0;
-            height: auto;
-        }
     }
 
     .order{
@@ -283,20 +298,28 @@ footer{
 }
 
 
+$delay: 100ms, 200ms, 300ms, 400ms, 500ms, 600ms, 700ms, 800ms, 900ms, 1000ms, 1100ms, 1200ms, 1300ms;
 
-@each $value in delay {
-    animation: fadein_plate 2000 $value;
-    -webkit-animation: fadein_plate 2000 $value;
+@each $var in $delay {
+    .fade-#{$var} {
+        animation: fade 300ms $var both;
+}
 }
 
-$delay: (20ms 40ms);
 
-@keyframes fadein{
-    0%{
-        transform:opacity(0);
-}
-    100%{
-        transform:opacity(1);
+@keyframes fade {
+    from{
+        opacity: 0;}
+    to{
+        opacity: 1
 }
 
 }
+
+@media (max-width: 426px){
+
+    .menu {
+        border-radius: 40px 40px 0 0;
+    }
+}
+

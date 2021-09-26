@@ -1,6 +1,10 @@
 /*color*/
 /*Font*/
-body {
+.container {
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,22 +18,19 @@ body {
   margin: 0;
 }
 
-body h1 {
-  font-size: 40px;
-  margin: 10px 0;
+.container h1 {
   font-family: "Shrikhand", sans-serif;
   font-weight: normal;
 }
 
-body h2 {
+.container h2 {
   margin: 0;
-  font-size: 27px;
   font-weight: bolder;
   font-family: "Roboto", sans-serif;
   margin-bottom: 20px;
 }
 
-body h3 {
+.container h3 {
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
@@ -37,32 +38,151 @@ body h3 {
   font-weight: lighter;
 }
 
-body h4 {
+.container h4 {
   font-size: 18px;
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: lighter;
 }
 
-body p {
+.container p {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
-body input {
+.container input {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
 }
 
-body a {
-  color: black;
+.container a {
   text-decoration: none;
+}
+
+.main {
+  overflow: auto;
+  animation: emerge_main 0ms 5000ms both;
+  -webkit-animation: emerge_main 0ms 5000ms both;
+  width: 100%;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.loader {
+  position: relative;
+  bottom: 60px;
+  height: 120px;
+  max-height: 0;
+}
+
+.loader_circle {
+  width: 120px;
+  height: 0;
+  border: #d8c9e9 8px solid;
+  border-radius: 6em;
+  animation: progression_loader 5000ms 150ms both;
+  -webkit-animation: progression_loader 5000ms 150ms both;
+}
+
+.loader_point {
+  width: 20px;
+  height: 20px;
+  border: #9356DC 2px solid;
+  background: #9356DC;
+  border-radius: 2em;
+}
+
+@-webkit-keyframes progression_loader {
+  from {
+    height: 120px;
+    max-height: 120px;
+  }
+  99% {
+    -webkit-transform: rotate(-3turn) scale(1);
+            transform: rotate(-3turn) scale(1);
+    height: 120px;
+    max-height: 120px;
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+@keyframes progression_loader {
+  from {
+    height: 120px;
+    max-height: 120px;
+  }
+  99% {
+    -webkit-transform: rotate(-3turn) scale(1);
+            transform: rotate(-3turn) scale(1);
+    height: 120px;
+    max-height: 120px;
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes emerge_main {
+  from {
+    height: 0;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+  99% {
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    height: auto;
+    visibility: visible;
+  }
+}
+
+@keyframes emerge_main {
+  from {
+    height: 0;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+  99% {
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    height: auto;
+    visibility: visible;
+  }
+}
+
+.main {
+  overflow: auto;
+  animation: emerge_main 0ms 5000ms both;
+  -webkit-animation: emerge_main 0ms 5000ms both;
+  width: 100%;
 }
 
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -70,6 +190,10 @@ header {
   height: 65px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000;
           box-shadow: 0px 10px 13px -7px #000000;
+}
+
+header img {
+  height: 35px;
 }
 
 form {
@@ -152,9 +276,10 @@ form input {
   display: flex;
   background-color: #F6F6F6;
   margin-bottom: 20px;
+  margin-left: 30px;
   border-radius: 20px;
-  width: 350px;
-  font-size: 24px;
+  width: 300px;
+  font-size: 20px;
   padding: 30px 20px;
   font-family: "Roboto", sans-serif;
 }
@@ -179,13 +304,16 @@ form input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #9356DC;
   color: white;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   padding: 4px;
   border-radius: 100%;
 }
@@ -204,7 +332,7 @@ form input {
 }
 
 .restaurants h2 {
-  margin-top: 50px;
+  padding-top: 50px;
   margin-left: 40px;
 }
 
@@ -216,7 +344,12 @@ form input {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0;
   padding: 0;
+}
+
+.restaurants a {
+  color: #000000;
 }
 
 .restaurants li {
@@ -263,13 +396,13 @@ form input {
 }
 
 .restaurants li .title .like_b {
-  color: linear-gradient(180deg, #FF79DA 10%, #9356DC 80%);
+  color: transparent;
   opacity: 0;
   font-size: 30px;
   -webkit-transform-origin: scale(0.1);
           transform-origin: scale(0.1);
-  -webkit-transition: all 150ms;
-  transition: all 150ms;
+  -webkit-transition: all 2500ms;
+  transition: all 2500ms;
   z-index: 10;
 }
 
@@ -353,6 +486,7 @@ footer {
 }
 
 footer h1 {
+  margin: 10px 0;
   margin-left: 20px;
   font-size: 20px;
   color: white;
@@ -363,5 +497,46 @@ footer a {
   font-family: "Roboto", sans-serif;
   margin-left: 20px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 375px) {
+  body h2 {
+    font-size: 25px;
+  }
+  .tuto ol li {
+    width: 280px;
+    font-size: 23px;
+  }
+  .tuto ol li p {
+    width: 36px;
+  }
+  .restaurants h2 {
+    margin-left: 20px;
+  }
+  .restaurants li {
+    width: 280px;
+  }
+}
+
+@media (max-width: 325px) {
+  .container h2 {
+    font-size: 30px;
+  }
+  .container body h2 {
+    font-size: 25px;
+  }
+  .container .tuto ol li {
+    width: 220px;
+    font-size: 23px;
+  }
+  .container .tuto ol li p {
+    width: 28px;
+  }
+  .container .restaurants h2 {
+    margin-left: 20px;
+  }
+  .container .restaurants li {
+    width: 280px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,23 +14,22 @@ $new_color : #00ac81;
 $Shrikhand : 'Shrikhand', sans-serif;
 $Roboto : 'Roboto', sans-serif;
 
+.container{
 
-body{
+    height: 100%;
+    justify-content: center;
     display:flex;
     align-items: center;
     flex-direction: column;
     margin: 0;
 
     h1{
-        font-size: 40px;
-        margin: 10px 0;
         font-family: $Shrikhand;
         font-weight: normal;
     }
 
     h2{
         margin: 0;
-        font-size: 27px;
         font-weight: bolder;
         font-family: $Roboto;
         margin-bottom: 20px;
@@ -62,19 +61,102 @@ body{
     }
 
     a{
-        color: black;
         text-decoration: none;
     }
 }
 
+.main{
+    overflow: auto;
+    animation: emerge_main 0ms 5000ms both;
+    -webkit-animation: emerge_main 0ms 5000ms both;
+    width: 100%;
+}
+
+html, body{
+    margin: 0;
+    height: 100%;
+}
+
+.loader{
+    position: relative;
+    bottom: 60px;
+    height: 120px;
+    max-height: 0;
+
+    &_circle{
+            width: 120px;
+            height: 0;
+            border: #d8c9e9 8px solid;
+            border-radius: 6em;
+            animation: progression_loader 5000ms 150ms both;
+            -webkit-animation: progression_loader 5000ms 150ms both;
+    }
+
+    &_point{
+        width: 20px;
+        height: 20px;
+        border: $primary_color 2px solid;
+        background: $primary_color;
+        border-radius: 2em;
+    }
+}
+
+@keyframes progression_loader{
+    from {
+        height: 120px;
+        max-height: 120px;
+}
+
+    99%{
+        transform: rotate(-3turn) scale(1);
+        height: 120px;
+        max-height: 120px;
+}
+
+    to{
+        transform:scale(0);
+        visibility: hidden;
+        height: 0;
+}
+
+}
+@keyframes emerge_main{
+    from {
+        height: 0;
+        max-height: 0;
+        visibility: hidden;
+        overflow: hidden;
+}
+
+    99%{height: 0;max-height: 0;overflow: hidden;}
+
+    to{
+        height: auto;
+        visibility: visible;
+}
+
+}
+
+.main{
+    //height: 0;
+    overflow: auto;
+    animation: emerge_main 0ms 5000ms both;
+    -webkit-animation: emerge_main 0ms 5000ms both;
+    width: 100%;
+}
 
 header{
 
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 65px;
     box-shadow: 0px 10px 13px -7px #000000;
+
+    img{
+        height: 35px;
+    }
 
 }
 
@@ -144,9 +226,10 @@ form{
             display: flex;
             background-color: $light_background_color;
             margin-bottom: 20px;
+            margin-left: 30px;
             border-radius: 20px;
-            width: 350px;
-            font-size: 24px;
+            width: 300px;
+            font-size: 20px;
             padding: 30px 20px;
             font-family: $Roboto;
 
@@ -164,11 +247,12 @@ form{
 
             p{
             display: flex;
+            align-items: center;
             justify-content: center;
             background-color: $primary_color;
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             padding: 4px;
             border-radius: 100%;
         }
@@ -193,7 +277,7 @@ form{
     width: 100%;
 
     h2{
-        margin-top: 50px;
+        padding-top: 50px;
         margin-left: 40px;
     }
 
@@ -201,7 +285,12 @@ form{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin: 0;
         padding: 0;
+    }
+
+    a{
+        color: #000000;
     }
 
     li{
@@ -218,6 +307,7 @@ form{
             justify-content: space-between;
             margin-left: 15px;
             align-items: center;
+
 
             h3{
                 margin-top: 12px;
@@ -240,14 +330,14 @@ form{
             }
 
             .like_b{
-                color: linear-gradient(180deg, $secondary_color 10%, $primary_color 80%);
+                color: transparent;
                 opacity: 0;
                 font-size: 30px;
                 transform-origin: scale(0.1);
-                transition: all 150ms;
+                transition: all 2500ms;
                 z-index: 10;
-
                 &:hover{
+
                     background: linear-gradient(180deg, $secondary_color 10%, $primary_color 80%);
                     transform: scale(1);
                     background-clip :text;
@@ -323,6 +413,7 @@ footer{
     width: 100%;
     padding: 25px 0;
     h1{
+        margin: 10px 0;
         margin-left: 20px;
         font-size: 20px;
         color: white;
@@ -334,4 +425,76 @@ footer{
         margin-left: 20px;
         margin-bottom: 10px;
     }
+}
+
+@media (max-width: 375px){
+
+    body{
+        h2{
+            font-size: 25px;
+        }
+    }
+
+    .tuto{
+        ol{
+            li{
+                width: 280px;
+                font-size: 23px;
+                p{
+                    width: 36px;
+                }
+            }
+        }
+    }
+
+    .restaurants{
+
+        h2{
+            margin-left: 20px;
+        }
+
+        li{
+            width: 280px;
+        }
+    }
+
+}
+
+@media (max-width: 325px){
+
+    .container{
+        h2{
+            font-size: 30px;
+    }
+
+    body{
+        h2{
+            font-size: 25px;
+        }
+    }
+
+    .tuto{
+        ol{
+            li{
+                width: 220px;
+                font-size: 23px;
+                p{
+                    width: 28px;
+                }
+            }
+        }
+    }
+
+    .restaurants{
+
+        h2{
+            margin-left: 20px;
+        }
+
+        li{
+            width: 280px;
+        }
+    }
+
+}
 }
