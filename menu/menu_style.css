@@ -100,7 +100,7 @@ body section {
 
 header {
   background-image: url(/images/logo/ohmyfood@2x.svg);
-  background-color: white;
+  background-color: #F6F6F6;
   background-repeat: no-repeat;
   background-size: 196px;
   background-position: center;
@@ -123,9 +123,11 @@ header i {
 }
 
 .img {
+  overflow: clip;
   height: 250px;
   width: 425px;
-  overflow-x: clip;
+  border-radius: 2em;
+  margin: 30px 0;
 }
 
 .img_a {
@@ -438,12 +440,24 @@ footer a {
 }
 
 @media (max-width: 425px) {
+  header {
+    background-color: white;
+  }
+  .img {
+    overflow: initial;
+    overflow-x: clip;
+    border-radius: 0;
+    margin: 0;
+  }
   .menu {
     border-radius: 40px 40px 0 0;
   }
 }
 
 @media (max-width: 375px) {
+  body h1 {
+    font-size: 25px;
+  }
   .img {
     width: 375px;
     height: 225px;
@@ -451,6 +465,12 @@ footer a {
   .img_a {
     width: 420px;
     right: 25px;
+  }
+  .menu_title .like_a {
+    font-size: 25px;
+  }
+  .menu_title .like_b {
+    font-size: 25px;
   }
   .menu li {
     width: 325px;
