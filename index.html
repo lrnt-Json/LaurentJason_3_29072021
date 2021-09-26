@@ -29,57 +29,63 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="loader">
+            <div class="loader_circle"><div class="loader_point"></div></div>
+        </div>
+        <div class="main">
+            <header>
 
-<header>
+                <img src="/images/logo/ohmyfood@2x.svg" alt="logo">
 
-    <img src="/images/logo/ohmyfood@2x.svg" alt="logo">
+            </header>
 
-</header>
+        <form>
+            <p><label for="search"><i class="fas fa-map-marker-alt"></i></label><input type="search" id=search placeholder="Paris, Belleville"></p>
+        </form>
 
-<form>
-    <p><label for="search"><i class="fas fa-map-marker-alt"></i></label><input type="search" id=search placeholder="Paris, Belleville"></p>
-</form>
+        <article class="explore">
+            <h2>Réservez le menu qui <br /> vous convient</h2>
+            <h3>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h3>
+            <input type ="button" class="explore_button" value="Explorer nos restaurants">
+        </article>
 
-<article class="explore">
-    <h2>Réservez le menu qui vous convient</h2>
-    <h3>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h3>
-    <input type ="button" class="explore_button" value="Explorer nos restaurants">
-</article>
-
-<article class="tuto">
-    <h2>fonctionnement</h2>
-    <ol>
-        <li><div><p>1</p><i class="fas fa-mobile-alt"></i> Choisissez un restaurant</li></div>
-        <li><div><p>2</p><i class="fas fa-list"></i> Composez votre menu</li></div>
-        <li class="last_help"><div><p>3</p><i class="fas fa-store"></i> Dégustez au restaurant</li></div>
+        <article class="tuto">
+             <h2>Fonctionnement</h2>
+            <ol>
+            <li><div><p>1</p><i class="fas fa-mobile-alt"></i> Choisissez un restaurant</div></li>
+            <li><div><p>2</p><i class="fas fa-list"></i> Composez votre menu</div></li>
+            <li class="last_help"><div><p>3</p><i class="fas fa-store"></i> Dégustez au restaurant</div></li>
     </ol>
 </article>
 
 <nav class="restaurants">
     <h2>Restaurants</h2>
     <ul>
-        <li><a href="menu/menu_a.html">
+        <li>
+            <a href="menu/menu_a.html">
 
-            <div class="menu menu_a">
-                <p>nouveau</p>
-            </div>
-
-            <div class="title">
-
-                <div class="title_txt">
-                    <h3>La palette du goût</h3>
-                    <h4>Ménilmontant</h4>
-                </div>
-                <div class="heart_block">
-                    <i class="fas fa-heart like_b"></i><i class="far fa-heart like_a"></i>
+                <div class="menu menu_a">
+                    <p>nouveau</p>
                 </div>
 
-            </div>
+                <div class="title">
 
-        </a></li>
+                    <div class="title_txt">
+                        <h3>La palette du goût</h3>
+                        <h4>Ménilmontant</h4>
+                    </div>
+                    <div class="heart_block">
+                        <i class="fas fa-heart like_b"></i><i class="far fa-heart like_a"></i>
+                    </div>
+
+                </div>
+
+            </a>
+        </li>
 
         <li>
-            <a>
+            <a href="menu/menu_b.html">
             <div class="menu menu_b">
                 <p>nouveau</p>
             </div>
@@ -98,26 +104,28 @@
             </a>
         </li>
 
-        <li><a>
+        <li>
+            <a href="menu/menu_c.html">
 
-            <div class="menu menu_c">
-            </div>
-
-            <div class="title">
-
-                <div>
-                    <h3>À la française</h3>
-                    <h4>Cité rouge</h4>
-                </div>
-                <div class="heart_block">
-                    <i class="fas fa-heart like_b"></i><i class="far fa-heart like_a"></i>
+                <div class="menu menu_c">
                 </div>
 
-            </div>
+                <div class="title">
 
-        </a></li>
+                    <div>
+                        <h3>À la française</h3>
+                        <h4>Cité rouge</h4>
+                    </div>
+                    <div class="heart_block">
+                        <i class="fas fa-heart like_b"></i><i class="far fa-heart like_a"></i>
+                    </div>
 
-        <li><a>
+                </div>
+
+            </a>
+        </li>
+
+        <li><a href="menu/menu_d.html">
 
             <div class="menu menu_d">
             </div>
@@ -138,13 +146,16 @@
     </ul>
 </nav>
 
-<footer>
+<footer class="footer">
     <h1>ohmyfood</h1>
     <a><i class="fas fa-utensils"></i> Proposer un restaurant</a>
     <a><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
     <a>Mentions légales</a>
     <a>Contact</a>
 </footer>
+
+</div>
+</div>
 </body>
 
 </html>

@@ -1,95 +1,17 @@
 /*color*/
 /*Font*/
-.loader {
-  height: 0;
-}
-
-.loader_circle {
-  width: 120px;
-  height: 0;
-  border: #d8c9e9 8px solid;
-  border-radius: 6em;
-  animation: progression_loader 5000ms 150ms both;
-  -webkit-animation: progression_loader 5000ms 150ms both;
-}
-
-.loader_point {
-  width: 20px;
-  height: 20px;
-  border: #9356DC 2px solid;
-  background: #9356DC;
-  border-radius: 2em;
-}
-
-@-webkit-keyframes progression_loader {
-  from {
-    height: 120px;
-  }
-  99% {
-    -webkit-transform: rotate(-3turn) scale(1);
-            transform: rotate(-3turn) scale(1);
-    height: 120px;
-  }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    visibility: hidden;
-    height: 0;
-  }
-}
-
-@keyframes progression_loader {
-  from {
-    height: 120px;
-  }
-  99% {
-    -webkit-transform: rotate(-3turn) scale(1);
-            transform: rotate(-3turn) scale(1);
-    height: 120px;
-  }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    visibility: hidden;
-    height: 0;
-  }
-}
-
-@-webkit-keyframes apparition {
-  from {
-    height: 0;
-    visibility: hidden;
-  }
-  99% {
-    height: 0;
-  }
-  to {
-    height: auto;
-    visibility: visible;
-  }
-}
-
-@keyframes apparition {
-  from {
-    height: 0;
-    visibility: hidden;
-  }
-  99% {
-    height: 0;
-  }
-  to {
-    height: auto;
-    visibility: visible;
-  }
-}
-
 .main {
-  height: 0;
-  animation: apparition 0ms 5000ms both;
-  -webkit-animation: apparition 0ms 5000ms both;
+  overflow: auto;
+  -webkit-animation: emerge_main 0ms 5000ms both;
+          animation: emerge_main 0ms 5000ms both;
+  width: 100%;
 }
 
 body {
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,8 +33,10 @@ body h1 {
 }
 
 body h2 {
+  width: 50px;
   margin: 0;
   margin-bottom: 10px;
+  border-bottom: #99E2D0 solid 4px;
   font-size: 20px;
   font-weight: normal;
   font-family: "Roboto", sans-serif;
@@ -129,7 +53,7 @@ body h3 {
 }
 
 body h4 {
-  font-size: 18px;
+  font-size: 17px;
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
@@ -176,6 +100,7 @@ body section {
 
 header {
   background-image: url(/images/logo/ohmyfood@2x.svg);
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 196px;
   background-position: center;
@@ -198,17 +123,40 @@ header i {
 }
 
 .img {
-  margin-bottom: -60px;
+  height: 250px;
+  width: 425px;
 }
 
-.img img {
+.img_a {
+  position: relative;
+  width: 465px;
+  z-index: -1;
+  right: 20px;
+}
+
+.img_b {
+  position: relative;
   width: 425px;
+  z-index: -1;
+  bottom: 110px;
+}
+
+.img_c {
+  position: relative;
+  width: 470px;
+  z-index: -1;
+  right: 2px;
+}
+
+.img_d {
+  position: relative;
+  width: 455px;
+  z-index: -1;
 }
 
 .menu {
   width: 100%;
   background-color: #F6F6F6;
-  border-radius: 40px 40px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,11 +180,46 @@ header i {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 25px 0;
+}
+
+.menu_title .heart_block {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 10px;
 }
 
 .menu_title i {
+  position: absolute;
   font-size: 30px;
+  margin: 0;
+}
+
+.menu_title .like_b {
+  color: transparent;
+  opacity: 0;
+  font-size: 30px;
+  -webkit-transform-origin: scale(0.1);
+          transform-origin: scale(0.1);
+  -webkit-transition: all 2500ms;
+  transition: all 2500ms;
+  z-index: 10;
+}
+
+.menu_title .like_b:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF79DA), color-stop(80%, #9356DC));
+  background: linear-gradient(180deg, #FF79DA 10%, #9356DC 80%);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu_title .like_b:hover + .like_a {
+  opacity: 0;
 }
 
 .menu li {
@@ -257,34 +240,51 @@ header i {
 }
 
 .menu li p {
+  margin-left: 10px;
   font-weight: bolder;
 }
 
 .menu li .dishes {
-  width: 100%;
+  width: 92%;
   padding: 10px;
   -webkit-transition: all 150ms;
   transition: all 150ms;
 }
 
-.menu li.plate:hover .dishes {
-  width: 75%;
-}
-
-.menu li.plate:hover .validate {
-  -webkit-transform-origin: 0px;
-          transform-origin: 0px;
-  opacity: 1;
-  width: 50px;
-  background-color: #99E2D0;
-}
-
 .menu li .validate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 10px;
-  padding: 10px;
+  padding: 0px;
   border-radius: 0px 10px 10px 0px;
   opacity: 0;
   height: auto;
+}
+
+.menu li.dish:hover .dishes {
+  width: 80%;
+}
+
+.menu li.dish:hover .validate {
+  -webkit-transform-origin: 0px;
+          transform-origin: 0px;
+  opacity: 1;
+  width: 35px;
+  background-color: #99E2D0;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.menu li.dish:hover .check {
+  rotate: 360;
 }
 
 .menu .order {
@@ -347,30 +347,92 @@ footer a {
   }
 }
 
-.element-list {
-  animation: -apparition 2000 list;
-  -webkit-animation: -apparition 2000 list;
+.fade-100ms {
+  -webkit-animation: fade 300ms 100ms both;
+          animation: fade 300ms 100ms both;
 }
 
-@-webkit-keyframes progress-dish {
-  0% {
-    -webkit-transform: opacity(0);
-            transform: opacity(0);
+.fade-200ms {
+  -webkit-animation: fade 300ms 200ms both;
+          animation: fade 300ms 200ms both;
+}
+
+.fade-300ms {
+  -webkit-animation: fade 300ms 300ms both;
+          animation: fade 300ms 300ms both;
+}
+
+.fade-400ms {
+  -webkit-animation: fade 300ms 400ms both;
+          animation: fade 300ms 400ms both;
+}
+
+.fade-500ms {
+  -webkit-animation: fade 300ms 500ms both;
+          animation: fade 300ms 500ms both;
+}
+
+.fade-600ms {
+  -webkit-animation: fade 300ms 600ms both;
+          animation: fade 300ms 600ms both;
+}
+
+.fade-700ms {
+  -webkit-animation: fade 300ms 700ms both;
+          animation: fade 300ms 700ms both;
+}
+
+.fade-800ms {
+  -webkit-animation: fade 300ms 800ms both;
+          animation: fade 300ms 800ms both;
+}
+
+.fade-900ms {
+  -webkit-animation: fade 300ms 900ms both;
+          animation: fade 300ms 900ms both;
+}
+
+.fade-1000ms {
+  -webkit-animation: fade 300ms 1000ms both;
+          animation: fade 300ms 1000ms both;
+}
+
+.fade-1100ms {
+  -webkit-animation: fade 300ms 1100ms both;
+          animation: fade 300ms 1100ms both;
+}
+
+.fade-1200ms {
+  -webkit-animation: fade 300ms 1200ms both;
+          animation: fade 300ms 1200ms both;
+}
+
+.fade-1300ms {
+  -webkit-animation: fade 300ms 1300ms both;
+          animation: fade 300ms 1300ms both;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
   }
-  100% {
-    -webkit-transform: opacity(1);
-            transform: opacity(1);
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes progress-dish {
-  0% {
-    -webkit-transform: opacity(0);
-            transform: opacity(0);
+@keyframes fade {
+  from {
+    opacity: 0;
   }
-  100% {
-    -webkit-transform: opacity(1);
-            transform: opacity(1);
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 426px) {
+  .menu {
+    border-radius: 40px 40px 0 0;
   }
 }
 /*# sourceMappingURL=menu_style.css.map */
