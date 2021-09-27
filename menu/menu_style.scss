@@ -184,7 +184,7 @@ header{
             color: transparent;
             opacity: 0;
             font-size: 30px;
-            transform-origin: scale(0.1);
+            transform: scale(0.1);
             transition: all 2500ms;
             z-index: 10;
             &:hover{
@@ -295,17 +295,6 @@ footer{
         margin-bottom: 10px;
     }
 }
-
-@keyframes loading-screen{
-
-    0%{
-        transform:opacity(0);
-    }
-    100%{
-        transform: opacity(1);
-    }
-}
-
 
 $delay: 100ms, 200ms, 300ms, 400ms, 500ms, 600ms, 700ms, 800ms, 900ms, 1000ms, 1100ms, 1200ms, 1300ms;
 

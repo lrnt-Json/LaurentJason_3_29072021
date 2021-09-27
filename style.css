@@ -399,8 +399,8 @@ form input {
   color: transparent;
   opacity: 0;
   font-size: 30px;
-  -webkit-transform-origin: scale(0.1);
-          transform-origin: scale(0.1);
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
   -webkit-transition: all 2500ms;
   transition: all 2500ms;
   z-index: 10;
