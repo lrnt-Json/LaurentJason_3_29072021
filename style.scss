@@ -88,9 +88,9 @@ html, body{
             height: 0;
             border: #d8c9e9 8px solid;
             border-radius: 6em;
-            animation: progression_loader 5000ms 150ms both;
-            -webkit-animation: progression_loader 5000ms 150ms both;
-    }
+            animation: progression_loader 3000ms 150ms both;
+            -webkit-animation: progression_loader 3000ms 150ms both;
+}
 
     &_point{
         width: 20px;
@@ -203,6 +203,10 @@ form{
         padding: 20px;
         font-size: 18px;
         font-weight: lighter;
+
+        &:hover{
+            background: linear-gradient(180deg, #FF9DE6 10% ,#A578DC 100%);
+        }
     }
 }
 
@@ -233,6 +237,14 @@ form{
             padding: 30px 20px;
             font-family: $Roboto;
 
+            &:hover{
+                background-color: #f5edff;
+
+                i{
+                    color: $primary_color;
+                }
+            }
+
             div{
                 display: flex;
                 align-items: center;
@@ -256,15 +268,6 @@ form{
             padding: 4px;
             border-radius: 100%;
         }
-        }
-
-        .last_help{
-
-            background-color: #f5edff;
-
-            i{
-                color: $primary_color;
-            }
         }
 
     }
@@ -333,7 +336,6 @@ form{
                 color: transparent;
                 opacity: 0;
                 font-size: 30px;
-                transform: scale(0.1);
                 transition: all 2500ms;
                 z-index: 10;
                 &:hover{
