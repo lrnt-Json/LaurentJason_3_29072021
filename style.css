@@ -83,8 +83,8 @@ html, body {
   height: 0;
   border: #d8c9e9 8px solid;
   border-radius: 6em;
-  animation: progression_loader 5000ms 150ms both;
-  -webkit-animation: progression_loader 5000ms 150ms both;
+  animation: progression_loader 3000ms 150ms both;
+  -webkit-animation: progression_loader 3000ms 150ms both;
 }
 
 .loader_point {
@@ -249,6 +249,11 @@ form input {
   font-weight: lighter;
 }
 
+.explore_button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF9DE6), to(#A578DC));
+  background: linear-gradient(180deg, #FF9DE6 10%, #A578DC 100%);
+}
+
 .tuto {
   width: 100%;
 }
@@ -284,6 +289,14 @@ form input {
   font-family: "Roboto", sans-serif;
 }
 
+.tuto ol li:hover {
+  background-color: #f5edff;
+}
+
+.tuto ol li:hover i {
+  color: #9356DC;
+}
+
 .tuto ol li div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,14 +329,6 @@ form input {
   height: 25px;
   padding: 4px;
   border-radius: 100%;
-}
-
-.tuto ol .last_help {
-  background-color: #f5edff;
-}
-
-.tuto ol .last_help i {
-  color: #9356DC;
 }
 
 .restaurants {
@@ -399,8 +404,6 @@ form input {
   color: transparent;
   opacity: 0;
   font-size: 30px;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
   -webkit-transition: all 2500ms;
   transition: all 2500ms;
   z-index: 10;

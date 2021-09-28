@@ -203,8 +203,6 @@ header i {
   color: transparent;
   opacity: 0;
   font-size: 30px;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
   -webkit-transition: all 2500ms;
   transition: all 2500ms;
   z-index: 10;
@@ -305,6 +303,11 @@ header i {
   padding: 20px 50px;
   font-size: 18px;
   font-weight: lighter;
+}
+
+.menu .order:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #FF9DE6), to(#A578DC));
+  background: linear-gradient(180deg, #FF9DE6 10%, #A578DC 100%);
 }
 
 footer {

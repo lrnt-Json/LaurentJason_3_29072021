@@ -184,7 +184,6 @@ header{
             color: transparent;
             opacity: 0;
             font-size: 30px;
-            transform: scale(0.1);
             transition: all 2500ms;
             z-index: 10;
             &:hover{
@@ -270,6 +269,10 @@ header{
         padding: 20px 50px;
         font-size: 18px;
         font-weight: lighter;
+
+        &:hover{
+            background: linear-gradient(180deg, #FF9DE6 10% ,#A578DC 100%);
+        }
     }
 }
 
