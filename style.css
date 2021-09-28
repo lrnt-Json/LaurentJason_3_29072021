@@ -83,8 +83,8 @@ html, body {
   height: 0;
   border: #d8c9e9 8px solid;
   border-radius: 6em;
-  animation: progression_loader 5000ms 150ms both;
-  -webkit-animation: progression_loader 5000ms 150ms both;
+  animation: progression_loader 3000ms 150ms both;
+  -webkit-animation: progression_loader 3000ms 150ms both;
 }
 
 .loader_point {
