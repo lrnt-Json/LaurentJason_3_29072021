@@ -235,11 +235,6 @@ header{
             opacity: 0;
             height: auto;
         }
-
-        .check{
-            transform: rotate(0);
-}
-
         &.dish:hover{
 
             .dishes{
@@ -257,8 +252,8 @@ header{
                 }
 
             .check {
-                transform: rotate(1turn);
-            }
+                transform: rotate(1);
+}
             }
 
     }
