@@ -271,6 +271,13 @@ header i {
   height: auto;
 }
 
+.menu li .validate .check {
+  font-size: 25px;
+  color: white;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
 .menu li.dish:hover .dishes {
   width: 80%;
 }
@@ -281,14 +288,12 @@ header i {
   opacity: 1;
   width: 35px;
   background-color: #99E2D0;
-  color: white;
-  font-size: 25px;
   padding: 10px;
 }
 
 .menu li.dish:hover .check {
-  -webkit-transform: rotate(1);
-          transform: rotate(1);
+  -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
 }
 
 .menu .order {

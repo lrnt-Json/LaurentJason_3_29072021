@@ -234,6 +234,12 @@ header{
             border-radius: 0px 10px 10px 0px;
             opacity: 0;
             height: auto;
+
+        .check{
+                font-size: 25px;
+                color: white;
+                transition: all 500ms;
+}
         }
         &.dish:hover{
 
@@ -246,13 +252,11 @@ header{
                 opacity: 1;
                 width: 35px;
                 background-color: $tertiary_color;
-                color: white;
-                font-size: 25px;
                 padding: 10px;
                 }
 
             .check {
-                transform: rotate(1);
+                transform: rotate(1turn);
 }
             }
 
