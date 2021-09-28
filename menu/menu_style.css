@@ -203,8 +203,8 @@ header i {
   color: transparent;
   opacity: 0;
   font-size: 30px;
-  -webkit-transform-origin: scale(0.1);
-          transform-origin: scale(0.1);
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
   -webkit-transition: all 2500ms;
   transition: all 2500ms;
   z-index: 10;
@@ -271,11 +271,6 @@ header i {
   height: auto;
 }
 
-.menu li .check {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-}
-
 .menu li.dish:hover .dishes {
   width: 80%;
 }
@@ -292,8 +287,8 @@ header i {
 }
 
 .menu li.dish:hover .check {
-  -webkit-transform: rotate(1turn);
-          transform: rotate(1turn);
+  -webkit-transform: rotate(1);
+          transform: rotate(1);
 }
 
 .menu .order {
@@ -332,28 +327,6 @@ footer a {
   font-family: "Roboto", sans-serif;
   margin-left: 20px;
   margin-bottom: 10px;
-}
-
-@-webkit-keyframes loading-screen {
-  0% {
-    -webkit-transform: opacity(0);
-            transform: opacity(0);
-  }
-  100% {
-    -webkit-transform: opacity(1);
-            transform: opacity(1);
-  }
-}
-
-@keyframes loading-screen {
-  0% {
-    -webkit-transform: opacity(0);
-            transform: opacity(0);
-  }
-  100% {
-    -webkit-transform: opacity(1);
-            transform: opacity(1);
-  }
 }
 
 .fade-100ms {
